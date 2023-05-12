@@ -9,6 +9,8 @@ import PekingDuck from '../../assets/Peking-Duck-min.jpg';
 import EggDropS from '../../assets/Egg-Drop-Soup-min.jpg';
 import CharSiu from '../../assets/Char-Siu-Pork-min.jpg';
 import MaPoTofu from '../../assets/Ma-Po-Tofu-min.jpg';
+import TodayChar from '../../assets/Char-today.jpg';
+import TodayMapo from '../../assets/Mapo-today.jpg';
 
 const Home = () => {
     return (
@@ -31,6 +33,52 @@ const Home = () => {
                     </Container>
                 </Card.ImgOverlay>
             </Card>
+
+            {/* Today's special Section */}
+            <Container>
+                <div className='row my-4 py-4'>
+                    <div className='col-md-6 my-4'>
+                        <h3 className='mb-0 text-center text-md-start'>
+                            <span className='fst-italic display-1 text-warning'>Today's</span>
+                            <br />
+                            <span className='ms-4 ps-4 fs-4 fw-bold'>SPECIALS</span>
+                        </h3>
+                        <div className='mt-4 pt-4'>
+                            <div className='d-flex justify-content-between'>
+                                <div>
+                                    <h6 className='display-6'>Pockmarked Lady's Tofu</h6>
+                                    <p>Garlic / Minced / Ginger /Chili bean</p>
+                                </div>
+                                <p className='text-warning display-6 mt-3 me-4'>$24</p>
+                            </div>
+                            <div className='d-flex justify-content-between'>
+                                <div>
+                                    <h6 className='display-6'>Fork Roast Char Pork</h6>
+                                    <p>Honey / Soy / Hoisin / Sauce /Brown Sugar</p>
+                                </div>
+                                <p className='text-warning display-6 mt-3 me-4'>$24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='col-md-6 my-4'>
+                        <div className='d-none d-md-block'>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <img src={TodayChar} className='w-100 rounded' alt="" />
+                                </div>
+                                <div className='col-md-6'>
+                                    <img src={TodayMapo} className='w-100 rounded' alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className='d-block d-md-none'>
+                            <img src={TodayChar} className='w-50 rounded' alt="" />
+                            <img src={TodayMapo} className='w-50 rounded' alt="" />
+                        </div>
+                    </div>
+                </div>
+            </Container>
+
 
             {/* Delicious Menu Section */}
             <Container className='my-4 py-4'>
