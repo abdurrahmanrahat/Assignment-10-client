@@ -1,21 +1,19 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import BannerImg from '../../assets/food-banner.jpg';
+import IconImage from '../../assets/flower-decor-hr.png';
 import BannerImgDark from '../../assets/banner-img-dark.jpg';
+import KungPao from '../../assets/Kung-Pao-Chicken-min.jpg';
+import HotHourSoap from '../../assets/Hot-and-Sour Soup-min.jpg';
+import PekingDuck from '../../assets/Peking-Duck-min.jpg';
+import EggDropS from '../../assets/Egg-Drop-Soup-min.jpg';
+import CharSiu from '../../assets/Char-Siu-Pork-min.jpg';
+import MaPoTofu from '../../assets/Ma-Po-Tofu-min.jpg';
 
 const Home = () => {
     return (
         <div>
-            {/* <div className=''>
-                <div className='position-relative overflow-hidden bg-dark'>
-                    <img className='w-100' src={BannerImg} alt="" />
-                    <div className='position-absolute top-0'>
-                        <h2>hello</h2>
-                    </div>
-                </div>
-            </div> */}
-
+            {/* Header Banner Section */}
             <Card className="bg-dark text-white rounded-0">
                 <Card.Img src={BannerImgDark} alt="Card image" />
                 <Card.ImgOverlay className='d-flex align-items-center'>
@@ -33,6 +31,54 @@ const Home = () => {
                     </Container>
                 </Card.ImgOverlay>
             </Card>
+
+            {/* Delicious Menu Section */}
+            <Container className='my-4 py-4'>
+                <h2 className='text-uppercase text-center mt-4 fw-bold'>Delicious Menu</h2>
+                <div className='d-flex justify-content-center'>
+                    <hr className='text-dark w-25 text-end' />
+                    <img className='' src={IconImage} alt="" />
+                    <hr className='w-25 text-start' />
+                </div>
+
+                <div className="container text-center my-4">
+                    <div className="row my-4 pt-4 d-flex justify-content-around">
+                        <div className="col-md-3 shadow-lg p-3">
+                            <img src={KungPao} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Kung Pao Chicken</h5>
+                            <p>Stir-fried chicken with peanuts, vegetables, and spicy Sichuan sauce.</p>
+                        </div>
+                        <div className="col-md-3 shadow-lg p-3">
+                            <img src={HotHourSoap} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Hot and Sour Soup</h5>
+                            <p>A spicy and sour soup made with mushrooms, tofu, and vinegar.</p>
+                        </div>
+                        <div className="col-md-3 shadow-lg p-3">
+                            <img src={PekingDuck} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Peking Duck</h5>
+                            <p>Roasted duck with crispy skin and served with thin pancakes, green onions.</p>
+                        </div>
+                    </div>
+                    <div className="row my-4 pb-4 d-flex justify-content-around">
+                        <div className="col-md-3 shadow-lg p-3">
+                            <img src={EggDropS} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Egg Drop Soup</h5>
+                            <p>A simple soup made with chicken broth and beaten, often flavored ginger and green onions.</p>
+                        </div>
+                        <div className="col-md-3 shadow-lg p-3">
+                            <img src={CharSiu} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Char Siu Pork</h5>
+                            <p>A popular Cantonese dish of roasted pork that has been marinated in a sweet and savory sauce.</p>
+                        </div>
+                        <div className="col-md-3 shadow-lg p-3 ">
+                            <img src={MaPoTofu} className='w-100 rounded' alt="" />
+                            <h5 className='mt-4'>Ma Po Tofu</h5>
+                            <p>A spicy Sichuan dish of silken tofu and ground pork in a numbing chili-bean sauce.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </Container>
         </div>
     );
 };
