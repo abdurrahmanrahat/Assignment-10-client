@@ -21,7 +21,7 @@ const Recipe = ({ recipe }) => {
                     <div>
                         Ingredients of this recipe:
                         {
-                            ingredients.map(ingredient => <li>{ingredient}</li>)
+                            ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)
                         }
                     </div>
                     <Card.Text className='mt-2 mb-0'>

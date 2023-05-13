@@ -10,6 +10,7 @@ const Header = () => {
     const handleLogout = () => {
         logOut();
     }
+    console.log(user?.photoURL);
 
 
     return (
@@ -26,12 +27,19 @@ const Header = () => {
                     </Nav>
                     <Nav>
                         {
-                            user && <span>{user.displayName}</span>
+                            user && <img style={{ width: '40px', height: '40px' }} className='rounded-circle me-4 mt-1' src={user?.photoURL} alt="" />
                         }
-                        <Link to="/login">
-                            <Button style={{ backgroundColor: '#C19E66' }} variant="light" className='btn-lg fs-5 border border-0 text-light'>Login</Button>
-                        </Link>
-                        <Button onClick={handleLogout} style={{ backgroundColor: '#C19E66' }} variant="light" className='btn-lg fs-5 border border-0 text-light'>log Out</Button>
+                        {
+                            user
+                                ?
+                                <Button onClick={handleLogout} style={{ backgroundColor: '#C19E66' }} variant="light" className='btn-lg fs-5 border border-0 text-light'>log Out</Button>
+                                :
+                                <Link to="/login">
+                                    <Button style={{ backgroundColor: '#C19E66' }} variant="light" className='btn-lg fs-5 border border-0 text-light'>Login</Button>
+                                </Link>
+                        }
+
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
