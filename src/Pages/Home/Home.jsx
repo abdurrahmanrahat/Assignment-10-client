@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import IconImage from '../../assets/flower-decor-hr.png';
@@ -11,8 +11,18 @@ import CharSiu from '../../assets/Char-Siu-Pork-min.jpg';
 import MaPoTofu from '../../assets/Ma-Po-Tofu-min.jpg';
 import TodayChar from '../../assets/Char-today.jpg';
 import TodayMapo from '../../assets/Mapo-today.jpg';
+import Chef from '../../Components/Chef/Chef';
 
 const Home = () => {
+    const [chefs, setChefs] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/chefs')
+        .then(res => res.json())
+        .then(data => setChefs(data))
+    }, [])
+
+
     return (
         <div>
             {/* Header Banner Section */}
@@ -78,6 +88,23 @@ const Home = () => {
                     </div>
                 </div>
             </Container>
+
+
+            {/* Chef Section */}
+            <Container className='pb-4'>
+                <h2 className='text-uppercase text-center mt-4 fw-bold'>Chefs Section</h2>
+                <div className='d-flex justify-content-center'>
+                    <hr className='text-dark w-25 text-end' />
+                    <img className='' src={IconImage} alt="" />
+                    <hr className='w-25 text-start' />
+                </div>
+                <div className='row'>
+                    {
+                        chefs.map(chef => <Chef key={chef.chef_id} chef={chef}></Chef>)
+                    }
+                </div>
+            </Container>
+
 
 
             {/* Delicious Menu Section */}

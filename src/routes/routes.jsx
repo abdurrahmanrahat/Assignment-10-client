@@ -5,6 +5,8 @@ import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
+import ChefLayout from "../layouts/ChefLayout";
+import ChefPage from "../Pages/ChefPage/ChefPage";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,17 @@ const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: "chef",
+        element: <ChefLayout></ChefLayout>,
+        children: [
+            {
+                path: ":id",
+                element: <ChefPage></ChefPage>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
             }
         ]
     }
