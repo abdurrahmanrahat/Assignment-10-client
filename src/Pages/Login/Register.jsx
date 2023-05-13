@@ -32,7 +32,7 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
-                setSuccess("Yehhoo!!");
+                setSuccess("Successfully user Register.");
                 form.reset();
             })
             .catch(err => {

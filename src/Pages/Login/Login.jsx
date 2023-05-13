@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogo from '../../assets/google-btn.png';
 import GithubLogo from '../../assets/github-btn.png';
 import { AuthContext } from '../../Components/Provider/AuthProvider';
@@ -11,6 +11,13 @@ const Login = () => {
 
 
     const { signIn, githubSignIn, googleSignIn } = useContext(AuthContext);
+
+    // for location purpose in login page.
+    // const navigate = useNavigate();
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || '/';
 
 
     // handle login function
@@ -27,8 +34,10 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                setSuccess("Yehhoo!!");
+                setSuccess("Successfully user Login.");
                 form.reset();
+                // Navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.log(err.message);
