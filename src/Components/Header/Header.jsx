@@ -14,7 +14,7 @@ const Header = () => {
                         <Link className='text-decoration-none text-light mx-2 fs-5' to="/blogs">Blogs</Link>
                     </Nav>
                     <Nav>
-                        <Link>
+                        <Link to="/login">
                             <Button style={{backgroundColor: '#C19E66'}} variant="light" className='btn-lg fs-5 border border-0 text-light'>Login</Button>
                         </Link>
                     </Nav>

@@ -64,7 +64,7 @@ const Footer = () => {
             </Container>
             {/* Copyright */}
             <div className="text-center pb-2 text-light">
-                <p className='text-center m-0'><small>© copyright of my news.</small></p>
+                <p className='text-center m-0'><small>© copyright of my design.</small></p>
             </div>
         </div>
     );
